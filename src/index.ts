@@ -8,8 +8,11 @@ console.log("App started");
 
 const myClass: MyClass = new MyClass(11, 2);
 console.log(myClass);
+console.log("myClass");
 
 if (module.hot) {
-  module.hot.accept();
-} 
+  module.hot.accept(() => {
+    console.log("HMR: Module updated.");
+  });
+}
 
